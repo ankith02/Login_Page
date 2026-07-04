@@ -1,0 +1,76 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="card-head">
+          <h2>Welcome Back!</h2>
+        </div>
+
+        <form class="login-form" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <span class="input-icon user-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </span>
+            <input
+              type="text"
+              name="username"
+              [(ngModel)]="username"
+              placeholder="Username"
+            />
+          </div>
+
+          <div class="input-group password-group">
+            <span class="input-icon lock-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="11" width="12" height="10" rx="2" ry="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+            </span>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+            />
+            <button type="button" class="eye" (click)="togglePassword()">
+              {{ showPassword ? '🙈' : '👁' }}
+            </button>
+          </div>
+
+          <button type="submit" class="login-btn">
+            <span>Login</span>
+          </button>
+        </form>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <div class="social-row">
+          <a class="social-btn google" href="https://accounts.google.com/signin/v2/identifier" aria-label="Continue with Google" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" class="social-svg">
+              <path fill="#4285F4" d="M23.64 12.2045c0-.76-.068-1.49-.196-2.2045H12.24v4.18h6.33c-.273 1.48-1.08 2.736-2.302 3.58v2.98h3.714c2.172-2.0 3.416-4.944 3.416-8.528z" />
+              <path fill="#34A853" d="M12.24 24c2.95 0 5.424-.98 7.232-2.66l-3.714-2.98c-1.03.69-2.35 1.1-3.518 1.1-2.706 0-4.999-1.826-5.818-4.276H2.728v2.69C4.536 21.82 8.12 24 12.24 24z" />
+              <path fill="#FBBC05" d="M6.422 14.184a7.377 7.377 0 0 1 0-4.368V7.126H2.728a11.99 11.99 0 0 0 0 9.748l3.694-2.69z" />
+              <path fill="#EA4335" d="M12.24 4.8c1.6 0 3.04.55 4.18 1.64l3.132-3.13C17.664 1.58 15.18 0 12.24 0 8.12 0 4.536 2.18 2.728 5.64l3.694 2.69C7.241 6.626 9.534 4.8 12.24 4.8z" />
+            </svg>
+          </a>
+          <a class="social-btn microsoft" href="https://login.microsoftonline.com/" aria-label="Continue with Microsoft" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" class="social-svg">
+              <rect x="3" y="3" width="8" height="8" fill="#F25022" />
+              <rect x="13" y="3" width="8" height="8" fill="#7FBA00" />
+              <rect x="3" y="13" width="8" height="8" fill="#00A4EF" />
+              <rect x="13" y="13" width="8" height="8" fill="#FFB900" />
+            </svg>
+          </a>
+          <a class="social-btn github" href="https://github.com/login" aria-label="Continue with GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" class="social-svg" fill="#ffffff">
+              <path d="M12 0.5C5.73 0.5.5 5.74.5 12.02c0 5.13 3.33 9.48 7.95 11.02.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2.0-3.23.7-3.91-1.56-3.91-1.56-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.58-.29-5.29-1.29-5.29-5.74 0-1.27.45-2.31 1.2-3.12-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.19.93-.26 1.93-.39 2.92-.39.99 0 1.99.13 2.93.39 2.21-1.5 3.19-1.19 3.19-1.19.63 1.59.23 2.77.12 3.06.75.81 1.2 1.85 1.2 3.12 0 4.46-2.72 5.45-5.31 5.73.42.36.8 1.08.8 2.18 0 1.58-.02 2.86-.02 3.25 0 .31.21.68.79.56A11.52 11.52 0 0 0 23.5 12.02C23.5 5.74 18.27.5 12 .5z" />
+            </svg>
+          </a>
+        </div>
+
+        <a class="forgot-password" href="#">Forgot Password?</a>
+
+    </div>
+
+</div>
